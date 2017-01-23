@@ -1,0 +1,8 @@
+The current user is: <%= @current_user.name %><br>
+<%= form_for(@event) do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :event_date %>
+    <%= f.date_field :event_date %>
+    <%= f.submit "Create your event" %>
+<% end %>
