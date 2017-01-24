@@ -1,5 +1,21 @@
-<h3>Events</h3>
-<% @events.each do |event| %>
+<h3>Upcoming Events</h3>
+<% if @events.future_events.empty? %>
+    No upcoming events! Make one!
+<% end %>
+<% @events.future_events.each do |event| %>
     <%= link_to event.name, event_path(event) %>
     <br>
 <% end %>
+
+
+<h3>Past Events</h3>
+<% @events.past_events.each do |event| %>
+    <%= link_to event.name, event_path(event) %>
+    <br>
+<% end %>
+
+<div class="container">
+<h4><%= link_to "Make A New Event", new_event_path %></h4>
+</div>
+
+

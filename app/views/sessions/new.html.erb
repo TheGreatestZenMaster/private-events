@@ -1,6 +1,6 @@
 <h1>Log in!</h1>
 <%= form_for(:session, url: sessions_path) do |f| %>
     <%= f.label :name %>
-    <%= f.text_field :name %>
-    <%= f.submit "Submit" %>
+    <%= f.text_field :name, class: 'form-control'  %>
+    <%= f.submit "Submit", class: 'btn btn-primary' %>
 <% end %>

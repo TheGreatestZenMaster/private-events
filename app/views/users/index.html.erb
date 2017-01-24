@@ -1,6 +1,9 @@
-The current user is: <%= @current_user.name %><br>
-<h3>Users</h3>
-<% @users.each do |user| %>
-    <%= link_to user.name, user_path(user) %>
-    <br>
-<% end %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+      <h3>Users</h3>
+      <% @users.each do |user| %>
+          <%= link_to user.name, user_path(user) %>
+          <br>
+      <% end %>
+  </div>
+</div>

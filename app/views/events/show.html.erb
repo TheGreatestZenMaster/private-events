@@ -1,3 +1,10 @@
 Name: <%= @event.name %><br>
-Created by user <%= @event.creator_id %><br>
+Created by <%= User.find(@event.creator_id).name %><br>
 Date: <%= @event.event_date %><br>
+<h3>Attendees</h3>
+<% @event.attendees.each do |attendee| %>
+    <%= attendee.name %><br>
+<% end %>
+<% if logged_in? && !attending(@event)%>
+    <%= render 'invite' %>
+<% end %>

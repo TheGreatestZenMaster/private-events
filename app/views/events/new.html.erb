@@ -1,8 +1,11 @@
-The current user is: <%= @current_user.name %><br>
-<%= form_for(@event) do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <%= f.label :event_date %>
-    <%= f.date_field :event_date %>
-    <%= f.submit "Create your event" %>
-<% end %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@event) do |f| %>
+        <%= f.label :name  %>
+        <%= f.text_field :name, class: 'form-control'  %>
+        <%= f.label :event_date %>
+        <%= f.date_field :event_date, class: 'form-control'  %>
+        <%= f.submit "Create your event", class: 'btn btn-primary' %>
+    <% end %>
+    </div>
+</div>

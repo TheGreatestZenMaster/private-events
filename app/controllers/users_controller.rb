@@ -11,13 +11,13 @@ class UsersController < ApplicationController
     end
     
     def index
-        @current_user = User.find(cookies[:user_id])
         @users = User.all
     end
     
     def show
-        @current_user = User.find(cookies[:user_id])
         @user = User.find(params[:id])
+        @future_events = @user.attended_events.future_events
+        @past_events = @user.attended_events.past_events
     end
     
     private

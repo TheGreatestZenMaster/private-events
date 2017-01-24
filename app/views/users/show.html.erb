@@ -1,8 +1,17 @@
-The current user is: <%= @current_user.name %><br>
-<%= @user.name %>
-<br>
-<ul>
-<% @user.events.each do |event| %>
-    <li><%= link_to event.name, event_path(event) %></li>
-<% end %>
-</ul>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+        <h3>Future Events <%= @user.name %> is attending</h3>
+        <ul>
+        <% @future_events.each do |event| %>
+            <li><%= link_to event.name, event_path(event) %></li>
+        <% end %>
+        </ul>
+        
+        <h3>Past Events <%= @user.name %> attended</h3>
+        <ul>
+        <% @past_events.each do |event| %>
+            <li><%= link_to event.name, event_path(event) %></li>
+        <% end %>
+        </ul>
+    </div>
+</div>
